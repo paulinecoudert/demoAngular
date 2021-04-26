@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NbMenuItem } from '@nebular/theme';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,40 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'demoAngular';
+  
+  items: NbMenuItem[] = [
+    {title: 'Acceuil', icon: 'home-outline', link: '/home'},
+    {title: 'About', icon: 'star', link: '/about'},
+    {title: 'Exos', icon: 'book', children: [
+
+    ]}
+  
+  ];
+
+  //2.1 Methode pour changer l'etat du menu
+  
+  //state : string='compacted';
+
+  // menu(){
+  //   if(this.state === 'compacted'){
+  //     this.state = 'expanded';
+  //   }
+  //   else this.state = 'compacted';
+  // };
+
+
+  //2.2 Methode pour changer l'etat du menu definit mes etats du menu
+  states: string[] = ['compacted', 'expanded', 'collapsed'];
+
+  current: number = 0;
+
+  get state(): string {
+    return this.states[this.current];
+  }
+
+  //permet de parcourir la liste des etats sans la dépasser d'où le modulo
+  menu() { 
+    this.current ++;
+    this.current %= this.states.length;
+  }
 }
