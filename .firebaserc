@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "wad20-3c9e8": {
+      "hosting": {
+        "demoAngular": [
+          "wad20-3c9e8"
+        ]
+      }
+    }
+  }
+}

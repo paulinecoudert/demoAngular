@@ -1,0 +1,18 @@
+<nb-chat title="Chat WAD20">
+  <nb-chat-message
+    *ngFor="let item of messages"
+    [sender]="item.auteur"
+    [message]="item.contenu"
+    [reply]="item.auteur !== 'Toto et ses potes'"
+    [date]="item.date"
+    dateFormat="dd/MM/YYYY HH:mm:ss"
+  >
+  </nb-chat-message>
+  <nb-chat-form
+    (send)="send($event)"
+    [dropFiles]="false"
+    messagePlaceholder="Entrer votre message"
+  >
+  </nb-chat-form>
+  <!-- je dois mettre le $event pour récupérer le contenu-->
+</nb-chat>

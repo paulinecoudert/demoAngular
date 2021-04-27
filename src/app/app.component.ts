@@ -12,6 +12,7 @@ export class AppComponent {
     {title: 'Acceuil', icon: 'home-outline', link: '/home'},
     {title: 'About', icon: 'star', link: '/about'},
     {title: 'Exos', icon: 'book', children: [
+      {title: 'Exercice 1 - chat', icon: 'message-circle', link: 'exo/exo1' },
 
     ]}
   
@@ -42,5 +43,7 @@ export class AppComponent {
   menu() { 
     this.current ++;
     this.current %= this.states.length;
+
+  
   }
 }
