@@ -17,7 +17,9 @@ import { TimestampToDatePipe } from './pipes/timestamp-to-date.pipe';
 import { LoginComponent } from './pages/login/login.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { ProductComponent } from './pages/product/product.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import {HttpClientModule} from '@angular/common/http';
     TimestampToDatePipe,
     LoginComponent,
     ProductAddComponent,
-    ProductComponent
+    ProductComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,9 @@ import {HttpClientModule} from '@angular/common/http';
     NbEvaIconsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

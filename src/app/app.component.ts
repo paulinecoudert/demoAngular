@@ -14,7 +14,7 @@ export class AppComponent {
     {title: 'Exos', icon: 'book', children: [
       {title: 'Exercice 1 - chat', icon: 'message-circle', link: 'exo/exo1' },
     ]},
-    {title: 'liste Produits', icon: 'moon', link: '/product'},
+    {title: 'liste Produits', icon: 'list-outline', link: '/product'},
     {title: 'Ajout de Produit', icon: 'sun', link: '/product-add'},
   
   ];
