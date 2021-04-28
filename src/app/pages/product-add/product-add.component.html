@@ -1,0 +1,18 @@
+<nb-card>
+  <nb-card-header> Ajouter un produit </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="fg" (ngSubmit)="submit()">
+      <div>
+        Nom :
+        <input nbInput formControlName="name" />
+      </div>
+      <div>
+        Prix :
+        <input nbInput type="number" formControlName="price" step="0.1" /> euros
+      </div>
+      <div>
+        <input nbButton type="submit" value="Envoyer" [disabled]="fg.invalid" />
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

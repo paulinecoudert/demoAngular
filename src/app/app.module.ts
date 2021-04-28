@@ -15,6 +15,9 @@ import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimestampToDatePipe } from './pipes/timestamp-to-date.pipe';
 import { LoginComponent } from './pages/login/login.component';
+import { ProductAddComponent } from './pages/product-add/product-add.component';
+import { ProductComponent } from './pages/product/product.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,15 @@ import { LoginComponent } from './pages/login/login.component';
     ExercicesComponent,
     Exercice1Component,
     TimestampToDatePipe,
-    LoginComponent
+    LoginComponent,
+    ProductAddComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+
+    HttpClientModule,
 
     FormsModule,
     ReactiveFormsModule,

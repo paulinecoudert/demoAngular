@@ -1,0 +1,11 @@
+<nb-card>
+  <nb-card-header> Liste des Produits </nb-card-header>
+  <nb-card-body>
+    <ul>
+      <li *ngFor="let item of model">
+        Boisson: {{ item.name }}
+        <p>Prix: {{ item.price }} euros</p>
+      </li>
+    </ul>
+  </nb-card-body>
+</nb-card>

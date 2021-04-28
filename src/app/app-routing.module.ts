@@ -7,6 +7,8 @@ import { Exercice1Component } from './pages/exercices/exercice1/exercice1.compon
 import { ExercicesComponent } from './pages/exercices/exercices.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ProductAddComponent } from './pages/product-add/product-add.component';
+import { ProductComponent } from './pages/product/product.component';
 
 const routes: Routes = [
   { path:'', redirectTo: '/home', pathMatch: 'full'}, // route par default
@@ -16,6 +18,8 @@ const routes: Routes = [
     {path:'exo1', component: Exercice1Component, canActivate: [LoginGuard]},
   ]},
   {path:'login', component: LoginComponent},
+  {path:'product', component: ProductComponent},
+  {path:'product-add', component: ProductAddComponent},
 ];
 
 @NgModule({

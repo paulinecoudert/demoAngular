@@ -15,7 +15,12 @@ constructor (
     route: ActivatedRouteSnapshot,
     
   state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-  //tester si l'utilisateur est connecté ou pas?
+  
+    let user = localStorage.getItem('connectedUser');
+    if (user){
+      return true;
+    }
+    //tester si l'utilisateur est connecté ou pas?
     this.router.navigateByUrl('/login');
     return false;
   }
